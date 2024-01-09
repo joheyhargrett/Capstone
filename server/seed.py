@@ -78,10 +78,10 @@ with app.app_context():
         formatted_phone_number = format_phone_number(raw_phone_number)
 
         customer = Customer(
-            username=fake.name(),
+            first_name=fake.first_name(), 
+            last_name=fake.last_name(),
             email=fake.email(),
             password=fake.password(),
-            full_name=fake.name(),
             address=fake.address(),
             phone_number=formatted_phone_number
         )
@@ -93,7 +93,7 @@ with app.app_context():
         product = Product(
             name=fake.word(),
             description=fake.paragraph(),
-            price=randint(1, 100),
+            price=fake.pydecimal(left_digits=2, right_digits=2, positive=True),
             stock_quantity=randint(1, 100),
             category=fake.word(),
             image_url=fake.image_url()

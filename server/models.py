@@ -4,6 +4,7 @@ from sqlalchemy import MetaData
 from sqlalchemy.orm import validates
 from datetime import datetime
 
+
 from config import db
 
 # Models go here!
@@ -12,17 +13,24 @@ class Customer(db.Model, SerializerMixin):
     
     
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(50),unique=True)
+    first_name = db.Column(db.String(100), nullable=False)
+    last_name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
-    full_name = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(255), nullable=False)
-    phone_number = db.Column(db.String(20), nullable=True)
+    phone_number = db.Column(db.String(20), nullable=False, unique=True)
 
     reviews = db.relationship('Review', back_populates="customer", cascade="all, delete-orphan")
     ordered_items = db.relationship('OrderedItem', back_populates='customer', cascade='all, delete-orphan')
     
     
+        
+    @validates('email')
+    def validate_email(self, key, email):
+        if not ('@' in email and '.' in email and len(email) > 1 and len(email) <= 120 and ' ' not in email):
+            raise ValueError('Invalid email')
+        return email
+        
 
     def __repr__(self):
         return f"<Customer {self.id} {self.username} {self.email} {self.full_name} {self.address} {self.phone_number}>"
@@ -36,7 +44,7 @@ class Product(db.Model, SerializerMixin):
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text)
     price = db.Column(db.Float, nullable=False)
-    stock_quantity = db.Column(db.Integer, nullable=False)
+    stock_quantity = db.Column(db.Integer, nullable=True)
     category = db.Column(db.String(50), nullable=True)
     image_url = db.Column(db.String(255), nullable=True)
     
@@ -62,8 +70,8 @@ class Review(db.Model, SerializerMixin):
     
     @validates('rating')
     def validate_rating(self, key, value):
-        if not (0 <= value <= 5):
-            raise ValueError('Rating must have a rating between 0 and 5')
+        if not (1 <= value <= 5):
+            raise ValueError('Rating must have a rating between 1 and 5')
         return value
 
 
