@@ -49,7 +49,7 @@ class AllCustomers(Resource):
             db.session.commit()
             
             # Returning new customer
-            response_body = new_customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password'))
+            response_body = new_customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number'))
             return make_response(response_body, 201)
         
         except(ValueError):
@@ -77,7 +77,7 @@ class Login(Resource):
         if customer and bcrypt.check_password_hash(customer.password, customer_password):
             # Setting the customer id in the session if the password is correct
             session['customer_id'] = customer.id
-            response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password'))
+            response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number'))
             return make_response(response_body, 201)
         else:
             response_body = {
@@ -100,7 +100,7 @@ class CheckSession(Resource):
             customer = Customer.query.get(customer_id)
             if customer:
                 # Prepare response body with detailed customer information
-                response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password'))
+                response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number'))
                 return make_response(response_body, 200)
             
         # If no customer is logged in, return an error response
@@ -153,7 +153,7 @@ class SignUp(Resource):
         
         # Prepare response body with detailed customer information
         response_body = new_customer.to_dict(
-            only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password')
+            only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number')
             )
         
         return make_response(response_body, 201)
@@ -194,7 +194,7 @@ class CustomerById(Resource):
 
             db.session.commit()
 
-            response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password'))
+            response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number'))
             return make_response(response_body, 200)
         else:
             response_body = {
