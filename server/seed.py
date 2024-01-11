@@ -8,6 +8,7 @@ from faker import Faker
 
 # Local imports
 from app import app
+from config import bcrypt
 
 with app.app_context():
     fake = Faker()
@@ -76,12 +77,15 @@ with app.app_context():
     for n in range(50):
         raw_phone_number = fake.numerify(text='##########')
         formatted_phone_number = format_phone_number(raw_phone_number)
+        
+        password = fake.password().encode('utf-8')
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
         customer = Customer(
             first_name=fake.first_name(), 
             last_name=fake.last_name(),
             email=fake.email(),
-            password=fake.password(),
+            password=hashed_password,
             address=fake.address(),
             phone_number=formatted_phone_number
         )

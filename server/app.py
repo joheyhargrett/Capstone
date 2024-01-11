@@ -3,19 +3,21 @@
 # Standard library imports
 
 # Remote library imports
-from flask import request, make_response, session, Flask
+from flask import request, make_response, session
 from flask_restful import Api, Resource
 from datetime import datetime
 
 
 # Local imports
-from config import app, db, api, migrate
+from config import app, db, api, migrate, bcrypt
 # Add your model imports
 from models import Customer, Review, Product, OrderedItem
 
 
+
 # Views go here!
 
+# My root endpoint
 @app.route('/')
 def index():
     return '<h1>Project Server</h1>'
@@ -23,56 +25,170 @@ def index():
 api = Api(app)
 
 
-
+# Resource for handling requests for all customers
 class AllCustomers(Resource):
+    # GET request to get all customers
      def get(self):
+        # Querying all customers from the database
         customers = Customer.query.all()
 
         response_body = []
-
+        # Getting customers from the database and adding them to the response body
         for customer in customers:
             response_body.append(customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number')))
 
         return make_response(response_body, 200)
     
    
-    
+    # POST request to add new customer
      def post(self):
         try:
+            # Creating and adding new customer in the database
             new_customer = Customer(email=request.json.get('email'), password=request.json.get('password'), first_name=request.json.get('first_name'), last_name=request.json.get('last_name'), address=request.json.get('address'), phone_number=request.json.get('phone_number'))
             db.session.add(new_customer)
             db.session.commit()
+            
+            # Returning new customer
             response_body = new_customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password'))
             return make_response(response_body, 201)
+        
         except(ValueError):
+            
+            
+            # Returning error if one or more fields are missing
             response_body = {
                 "error": "Invalid value for one or more fields!"
             }
             return make_response(response_body, 422)
-    
+        
+# Adding the AllCustomers resource to the API with a route of /customers  
 api.add_resource(AllCustomers, '/customers')
 
+# Resource for handling login requests
+class Login(Resource):
+    def post(self):
+        
+        customer_email = request.json.get('email')
+        customer_password = request.json.get('password')
+        
+        # Querying the customer with the given email from the database
+        customer = Customer.query.filter_by(email=customer_email).first()
+        
+        if customer and bcrypt.check_password_hash(customer.password, customer_password):
+            # Setting the customer id in the session if the password is correct
+            session['customer_id'] = customer.id
+            response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password'))
+            return make_response(response_body, 201)
+        else:
+            response_body = {
+                'error': 'Login Failed',
+                'details': 'Invalid email or password'}
+        return make_response(response_body, 401)
+    
+    # Adding the Login resource to the API with a route of /login
+api.add_resource(Login, '/login')
 
 
+# Resource for checking the session and retrieving the customer details
+class CheckSession(Resource):
+    def get(self):
+        # Retrieving the customer ID from the session
+        customer_id = session.get('customer_id')
+        if customer_id:
+            # Querying the customer with the customer ID from the session
+
+            customer = Customer.query.get(customer_id)
+            if customer:
+                # Prepare response body with detailed customer information
+                response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password'))
+                return make_response(response_body, 200)
+            
+        # If no customer is logged in, return an error response
+        response_body = {
+            'error': 'Please log into your account',
+            'details': 'No user logged in'}
+        return make_response(response_body, 401)
+    
+
+# Add the '/check_session' endpoint to the API with the CheckSession resource
+api.add_resource(CheckSession, '/check_session')
+
+
+class Logout(Resource):
+    # Clear the customer ID from the session
+   def get(self):
+        session['customer_id'] = None
+        print(session)
+        response_body = {}
+        return make_response(response_body, 204)
+# Add the '/logout' endpoint to the API with the Logout resource
+    
+api.add_resource(Logout, '/logout')
+ 
+        
+
+
+
+class SignUp(Resource):
+    def post(self):
+        # Creating and adding new customer in the database
+        customer_email = request.json.get('email')
+        customer_password = request.json.get('password')
+        customer_first_name = request.json.get('first_name')
+        customer_last_name = request.json.get('last_name')
+        customer_address = request.json.get('address')
+        customer_phone_number = request.json.get('phone_number')
+        
+        # Hashing the password before adding it to the database
+        pw_hash = bcrypt.generate_password_hash(customer_password).decode('utf-8')
+        # Creating and adding new customer in the database
+        new_customer = Customer(first_name = customer_first_name, last_name = customer_last_name, 
+                                email = customer_email, password = pw_hash, address = customer_address, phone_number = customer_phone_number)
+        # Adding new customer to the database
+        db.session.add(new_customer)
+        db.session.commit()
+
+        # Setting the customer id in the session
+        session['customer_id'] = new_customer.id
+        
+        # Prepare response body with detailed customer information
+        response_body = new_customer.to_dict(
+            only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number', 'password')
+            )
+        
+        return make_response(response_body, 201)
+ # Add the '/signup' endpoint to the API with the SignUp resource   
+api.add_resource(SignUp, '/signup')
+
+
+
+# My Resource for handling requests for a specific customer by ID
 class CustomerById(Resource):
     def get(self, id):
+        
+        # Retrieving the customer with the specified ID from the database
         customer = Customer.query.filter(Customer.id == id).first()
 
         if customer:
+            # Prepare response body with detailed customer information
             response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number',  'reviews.id', 'reviews.rating', 'ordered_items.id', 'ordered_items.quantity', 'ordered_items.order_date'))
             return make_response(response_body, 200)
         else:
+            # Handle customer not found
             response_body = {
-                'error': 'Customer Not Found'
+                'error': 'Customer Not Found',
+                'details': f'Customer with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
         
         
         
     def patch(self, id):
+        # Updating the customer with the specified ID in the database
         customer = Customer.query.filter(Customer.id == id).first()
 
         if customer:
+            # Update the customer attributes with the new values from the request
             for attr in request.json:
                 setattr(customer, attr, request.json.get(attr))
 
@@ -82,7 +198,8 @@ class CustomerById(Resource):
             return make_response(response_body, 200)
         else:
             response_body = {
-                'error': 'Customer Not Found'
+                'error': 'Customer Not Found',
+                'details': f'Customer with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
         
@@ -99,7 +216,8 @@ class CustomerById(Resource):
             return make_response(response_body, 204)
         else:
             response_body = {
-                'error': 'Customer Not Found'
+                'error': 'Customer Not Found',
+                'details': f'Customer with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
 
@@ -125,7 +243,8 @@ class AllProduct(Resource):
             return make_response(response_body, 201)
         except(ValueError):
             response_body = {
-                "error": "Invalid value for one or more fields!"
+                "error": "Invalid value for one or more fields!",
+                "details": "The following fields are required: name, price, description, image_url, category, stock_quantity"
             }
             return make_response(response_body, 422)
     
@@ -142,7 +261,8 @@ class ProductById(Resource):
             return make_response(response_body, 200)
         else:
             response_body = {
-                'error': 'Product Not Found'
+                'error': 'Product Not Found',
+                'details': f'Product with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
         
@@ -160,7 +280,8 @@ class ProductById(Resource):
             return make_response(response_body, 200)
         else:
             response_body = {
-                'error': 'Product Not Found'
+                'error': 'Product Not Found',
+                'details': f'Product with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
         
@@ -175,7 +296,8 @@ class ProductById(Resource):
             return make_response(response_body, 204)
         else:
             response_body = {
-                'error': 'Product Not Found'
+                'error': 'Product Not Found',
+                'details': f'Product with ID {id} does not exist.'  
             }
             return make_response(response_body, 404)
 
@@ -191,7 +313,8 @@ class ReviewById(Resource):
             return make_response(response_body, 200)
         else:
             response_body = {
-                'error': 'Review Not Found'
+                'error': 'Review Not Found',
+                'details': f'Review with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
         
@@ -210,7 +333,8 @@ class ReviewById(Resource):
             return make_response(response_body, 200)
         else:
             response_body = {
-                'error': 'Review Not Found'
+                'error': 'Review Not Found',
+                'details': f'Review with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
         
@@ -226,7 +350,8 @@ class ReviewById(Resource):
         
         else:
             response_body = {
-                'error': 'Review Not Found'
+                'error': 'Review Not Found',
+                'details': f'Review with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
 api.add_resource(ReviewById, '/reviews/<int:id>')
@@ -283,7 +408,8 @@ class OrderedItemsByID(Resource):
             return make_response(response_body, 200)
         else:
             response_body = {
-                'error': 'Ordered Item Not Found'
+                'error': 'Ordered Item Not Found',
+                'details': f'Ordered Item with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
         
@@ -297,7 +423,8 @@ class OrderedItemsByID(Resource):
             return make_response(response_body, 204)
         else:
             response_body = {
-                'error': 'Ordered Item Not Found'
+                'error': 'Ordered Item Not Found',
+                'details': f'Ordered Item with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
         

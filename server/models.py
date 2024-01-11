@@ -24,16 +24,25 @@ class Customer(db.Model, SerializerMixin):
     ordered_items = db.relationship('OrderedItem', back_populates='customer', cascade='all, delete-orphan')
     
     
+    
+        
+    
         
     @validates('email')
     def validate_email(self, key, email):
         if not ('@' in email and '.' in email and len(email) > 1 and len(email) <= 120 and ' ' not in email):
             raise ValueError('Invalid email')
         return email
+    
+    # @validates('phone_number')
+    # def validate_phone_number(self, key, phone_number):
+    #     if not (len(phone_number) == 10 and phone_number.isdigit()):
+    #         raise ValueError('Invalid phone number')
+    #     return phone_number
         
 
     def __repr__(self):
-        return f"<Customer {self.id} {self.username} {self.email} {self.full_name} {self.address} {self.phone_number}>"
+        return f"<Customer {self.id} {self.first_name} {self.last_name} {self.email}  {self.address} {self.phone_number} {self.password}>"
 
 
 
@@ -44,9 +53,9 @@ class Product(db.Model, SerializerMixin):
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text)
     price = db.Column(db.Float, nullable=False)
-    stock_quantity = db.Column(db.Integer, nullable=True)
-    category = db.Column(db.String(50), nullable=True)
-    image_url = db.Column(db.String(255), nullable=True)
+    stock_quantity = db.Column(db.Integer, nullable=False)
+    category = db.Column(db.String(50), nullable=False)
+    image_url = db.Column(db.String(255), nullable=False)
     
     ordered_items = db.relationship('OrderedItem', back_populates='product', cascade='all, delete-orphan')
     
@@ -69,10 +78,10 @@ class Review(db.Model, SerializerMixin):
     customer = db.relationship('Customer', back_populates="reviews")
     
     @validates('rating')
-    def validate_rating(self, key, value):
-        if not (1 <= value <= 5):
+    def validate_rating(self, key, rating):
+        if not (1 <= rating <= 5):
             raise ValueError('Rating must have a rating between 1 and 5')
-        return value
+        return rating
 
 
     def __repr__(self):
@@ -93,4 +102,4 @@ class OrderedItem(db.Model, SerializerMixin):
     
     
     def __repr__(self):
-        return f"<OrderItem {self.id} {self.quantity}>"
+        return f"<OrderItem {self.id} {self.quantity} {self.order_date}>"
