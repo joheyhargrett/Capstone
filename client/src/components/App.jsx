@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AuthProvider } from '../contexts/AuthContext';
+import { UserProvider } from './UserContext';
 import './App.css';
 import Home from './Home';
 import Login from './Login';
@@ -12,11 +12,12 @@ import Cart from './Cart';
 import Products from './Products';
 import './About.css';
 import AdminPage from './AdminEdits';
+import CustomerDetails from './CustomerProfile';
 
 function App() {
   return (
     <Router>
-      <AuthProvider>
+      <UserProvider>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -27,10 +28,11 @@ function App() {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Products" element={<Products />} />
           <Route path="/Admin" element={<AdminPage />} />
+          <Route path="/CustomerDetails" element={<CustomerDetails />} />
 
           
         </Routes>
-      </AuthProvider>
+      </UserProvider>
     </Router>
   );
 }

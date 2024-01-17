@@ -11,6 +11,10 @@ from flask_bcrypt import Bcrypt
 import os
 
 # Local imports
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 
@@ -36,6 +40,7 @@ api = Api(app)
 CORS(app)
 
 # Generate a random sequence of bytes as the secret key
-secret_key = os.urandom(32)
+secret_key = os.getenv('SECRET_KEY')
+
 
 app.secret_key = secret_key

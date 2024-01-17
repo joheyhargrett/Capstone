@@ -4,7 +4,7 @@ const ProductDetails = ({ productId }) => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // Fetch product details when the component mounts
+    
     fetchProductDetails(productId);
   }, [productId]);
 
@@ -33,7 +33,7 @@ const ProductDetails = ({ productId }) => {
       });
 
       if (response.ok) {
-        // Product updated successfully, you can perform additional actions if needed
+        
         console.log('Product updated successfully!');
       } else {
         console.error('Failed to update product:', response.status, response.statusText);
@@ -50,7 +50,7 @@ const ProductDetails = ({ productId }) => {
       });
 
       if (response.ok) {
-        // Product deleted successfully, you can perform additional actions if needed
+        
         console.log('Product deleted successfully!');
       } else {
         console.error('Failed to delete product:', response.status, response.statusText);
@@ -70,7 +70,7 @@ const ProductDetails = ({ productId }) => {
           <p>Stock: {product.stock}</p>
           <p>Category: {product.category}</p>
           <p>Image: {product.image}</p>
-          {/* Add other product details as needed */}
+          
           <button onClick={() => handleUpdateProduct({ name: 'Updated Product' })}>
             Update Product
           </button>

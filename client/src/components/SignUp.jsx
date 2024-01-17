@@ -65,7 +65,7 @@ const SignUp = () => {
       <label>Create A Password:</label>
       <input type="password" name="password" value={formData.password} onChange={handleInputChange} required />
 
-      {/* Button to submit the signup form */}
+      
       <button onClick={handleSignUp}>Sign Up</button> 
       </form>
       <h1>Sign Up</h1>

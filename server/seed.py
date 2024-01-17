@@ -78,17 +78,17 @@ with app.app_context():
         raw_phone_number = fake.numerify(text='##########')
         formatted_phone_number = format_phone_number(raw_phone_number)
         
-        password = fake.password().encode('utf-8')
-        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        # password = fake.password().encode('utf-8')
+        # hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
         customer = Customer(
             first_name=fake.first_name(), 
             last_name=fake.last_name(),
             email=fake.email(),
-            password=hashed_password,
             address=fake.address(),
             phone_number=formatted_phone_number
         )
+        customer.password_hash=fake.password()
         customers.append(customer)
 
     products = []

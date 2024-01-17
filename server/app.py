@@ -22,13 +22,15 @@ from models import Customer, Review, Product, OrderedItem
 def index():
     return '<h1>Project Server</h1>'
 
+
+
 api = Api(app)
 
 
 # Resource for handling requests for all customers
 class AllCustomers(Resource):
     # GET request to get all customers
-     def get(self):
+    def get(self):
         # Querying all customers from the database
         customers = Customer.query.all()
 
@@ -39,27 +41,8 @@ class AllCustomers(Resource):
 
         return make_response(response_body, 200)
     
-   
-    # POST request to add new customer
-     def post(self):
-        try:
-            # Creating and adding new customer in the database
-            new_customer = Customer(email=request.json.get('email'), password=request.json.get('password'), first_name=request.json.get('first_name'), last_name=request.json.get('last_name'), address=request.json.get('address'), phone_number=request.json.get('phone_number'))
-            db.session.add(new_customer)
-            db.session.commit()
-            
-            # Returning new customer
-            response_body = new_customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number'))
-            return make_response(response_body, 201)
-        
-        except(ValueError):
-            
-            
-            # Returning error if one or more fields are missing
-            response_body = {
-                "error": "Invalid value for one or more fields!"
-            }
-            return make_response(response_body, 422)
+    
+     
         
 # Adding the AllCustomers resource to the API with a route of /customers  
 api.add_resource(AllCustomers, '/customers')
@@ -74,7 +57,7 @@ class Login(Resource):
         # Querying the customer with the given email from the database
         customer = Customer.query.filter_by(email=customer_email).first()
         
-        if customer and bcrypt.check_password_hash(customer.password, customer_password):
+        if customer and customer.authenticate(customer_password):
             # Setting the customer id in the session if the password is correct
             session['customer_id'] = customer.id
             response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number'))
@@ -140,10 +123,11 @@ class SignUp(Resource):
         customer_phone_number = request.json.get('phone_number')
         
         # Hashing the password before adding it to the database
-        pw_hash = bcrypt.generate_password_hash(customer_password).decode('utf-8')
+        
         # Creating and adding new customer in the database
         new_customer = Customer(first_name = customer_first_name, last_name = customer_last_name, 
-                                email = customer_email, password = pw_hash, address = customer_address, phone_number = customer_phone_number)
+                                email = customer_email, address = customer_address, phone_number = customer_phone_number)
+        new_customer.password_hash = customer_password
         # Adding new customer to the database
         db.session.add(new_customer)
         db.session.commit()
@@ -172,6 +156,7 @@ class CustomerById(Resource):
         if customer:
             # Prepare response body with detailed customer information
             response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number',  'reviews.id', 'reviews.rating', 'ordered_items.id', 'ordered_items.quantity', 'ordered_items.order_date'))
+            
             return make_response(response_body, 200)
         else:
             # Handle customer not found
@@ -203,7 +188,7 @@ class CustomerById(Resource):
             }
             return make_response(response_body, 404)
         
-        # post request is working
+        
     
         
     def delete(self, id):
@@ -220,6 +205,8 @@ class CustomerById(Resource):
                 'details': f'Customer with ID {id} does not exist.'
             }
             return make_response(response_body, 404)
+        
+    
 
 api.add_resource(CustomerById, '/customers/<int:id>')
 

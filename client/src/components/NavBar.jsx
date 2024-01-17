@@ -68,19 +68,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
-{
-  /* <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/Login">Login</Link>
-        </li>
-        <li>
-          <Link to="/SignUp">Sign Up</Link>
-        </li>
-      </ul>
-    </nav>
-    <Outlet /> */
-}
+
