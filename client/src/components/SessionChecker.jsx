@@ -1,36 +1,26 @@
-import React, { useState, useEffect } from "react";
+import  { useEffect } from "react";
+import { useUser } from "./UserContext";
 
-const SessionChecker = ({ onSessionCheck }) => {
-  const [loading, setLoading] = useState(true);
+const SessionChecker = () => {
+  const { handleLogin } = useUser();
 
   useEffect(() => {
     const checkSession = async () => {
       try {
         const response = await fetch("http://localhost:5555/check_session");
-
         if (response.ok) {
           const data = await response.json();
-          onSessionCheck(data);
-        } else {
-          console.error("Session check failed:", response.statusText);
+          handleLogin(data);
         }
       } catch (error) {
         console.error("Error during session check:", error);
-      } finally {
-        setLoading(false);
       }
     };
 
     checkSession();
-  }, [onSessionCheck]);
+  }, [handleLogin]);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  return <div>
-    
-  </div>;
+  return null; 
 };
 
 export default SessionChecker;

@@ -13,6 +13,8 @@ import Products from './Products';
 import './About.css';
 import AdminPage from './AdminEdits';
 import CustomerDetails from './CustomerProfile';
+import Product from './Product';
+import CheckOut from './CheckOut';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/Products" element={<Products />} />
           <Route path="/Admin" element={<AdminPage />} />
           <Route path="/CustomerDetails" element={<CustomerDetails />} />
+          <Route path="/Products/:id" element={<Product />} />
+          <Route path="/CheckOut" element={<CheckOut />} />
 
           
         </Routes>
@@ -38,3 +42,5 @@ function App() {
 }
 
 export default App;
+
+

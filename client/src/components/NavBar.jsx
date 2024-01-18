@@ -1,16 +1,18 @@
 // NavBar.jsx
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const NavBar = () => {
+    const state = useSelector((state) => state.handleCart)
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
         <div className="container">
-          <a className="navbar-brand fw-bold fs-4" href="#">
+          <Link className="navbar-brand fw-bold fs-4" to="/">
           TIMELESS TRENDS
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -53,7 +55,7 @@ const NavBar = () => {
                 <i className="fa fa-user-plus me-1"></i> Sign Up
               </Link>
               <Link to="/Cart" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-shopping-cart me-1"></i> Cart (0)
+                <i className="fa fa-shopping-cart me-1"></i> Cart ({state.length})
               </Link>
               <Link to="/Admin" className="btn btn-outline-dark ms-2">
                 <i className="fa fa-shopping-cart me-1"></i> Admin

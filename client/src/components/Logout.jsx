@@ -1,25 +1,21 @@
 import React from "react";
+import { useUser } from "./UserContext";
 
-const LogoutButton = ({ onLogout }) => {
-  const handleLogout = async () => {
+const LogoutButton = () => {
+  const { handleLogout } = useUser();
+
+  const handleLogoutClick = async () => {
     try {
-      const response = await fetch("http://localhost:5555/logout");
-
+      const response = await fetch("http://localhost:5555/logout", { method: 'POST' });
       if (response.ok) {
-        onLogout();
-      } else {
-        console.error("Logout failed:", response.statusText);
+        handleLogout();
       }
     } catch (error) {
       console.error("Error during logout:", error);
     }
   };
 
-  return (
-    <div>
-      <button type="button" className="btn btn-primary"  onClick={handleLogout}>Logout</button>
-    </div>
-  );
+  return <button onClick={handleLogoutClick}>Logout</button>;
 };
 
 export default LogoutButton;

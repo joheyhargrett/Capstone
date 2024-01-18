@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from './UserContext'; 
+import './CustomerProfile.css';
 
 const CustomerDetails = () => {
   const { user } = useUser();
@@ -23,7 +24,7 @@ const CustomerDetails = () => {
       }
       const data = await response.json();
       setCustomerData(data);
-      setEditData({...data}); 
+      setEditData({...data}); // Copy data for editing
     } catch (e) {
       setError(e.message);
     } finally {
@@ -75,6 +76,7 @@ const CustomerDetails = () => {
           <input name="last_name" value={editData.last_name || ''} onChange={handleEditChange} />
           <input name="address" value={editData.address || ''} onChange={handleEditChange} />
           <input name="phone_number" value={editData.phone_number || ''} onChange={handleEditChange} />
+          
           <button type="submit">Save Changes</button>
           <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
         </form>
