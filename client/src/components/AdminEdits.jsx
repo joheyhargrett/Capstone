@@ -5,20 +5,17 @@ const AdminPage = () => {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [formData, setFormData] = useState({});
 
-  // Fetch customers from the API
   useEffect(() => {
     fetch('http://localhost:5555/customers')
       .then(response => response.json())
       .then(data => setCustomers(data));
   }, []);
 
-  // Handle customer selection for editing
   const handleEdit = (customer) => {
     setSelectedCustomer(customer);
     setFormData(customer);
   };
 
-  // Update customer details on the server
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`http://localhost:5555/customers/${selectedCustomer.id}`, {
@@ -29,19 +26,16 @@ const AdminPage = () => {
       body: JSON.stringify(formData),
     }).then(() => {
       setSelectedCustomer(null);
-      // Refresh the customer list after updating
       fetch('http://localhost:5555/customers')
         .then(response => response.json())
         .then(data => setCustomers(data));
     });
   };
 
-  // Handle form changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Delete customer
   const handleDelete = (id) => {
     fetch(`http://localhost:5555/customers/${id}`, { method: 'DELETE' })
       .then(() => {
@@ -50,31 +44,44 @@ const AdminPage = () => {
   };
 
   return (
-    <div>
-      <h1>Admin Dashboard</h1>
+    <div className="container my-5 border p-4">
+      <h1 className="text-center">Admin Dashboard</h1>
       {selectedCustomer ? (
         <div>
           <h2>Edit Customer</h2>
-          <form onSubmit={handleSubmit}>
-            <input name="email" value={formData.email || ''} onChange={handleChange} />
-            <input name="first_name" value={formData.first_name || ''} onChange={handleChange} />
-            <input name="last_name" value={formData.last_name || ''} onChange={handleChange} />
-            <input name="address" value={formData.address || ''} onChange={handleChange} />
-            <input name="phone_number" value={formData.phone_number || ''} onChange={handleChange} />
-            <button type="submit">Save Changes</button>
-            <button onClick={() => setSelectedCustomer(null)}>Cancel</button>
+          <form onSubmit={handleSubmit} className="mb-3">
+            {Object.entries(formData).map(([key, value]) => (
+              <div className="mb-3" key={key}>
+                <label className="form-label">{key.replace('_', ' ').toUpperCase()}</label>
+                <input 
+                  type="text" 
+                  className="form-control" 
+                  name={key} 
+                  value={value} 
+                  onChange={handleChange} 
+                />
+              </div>
+            ))}
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary me-2">Save Changes</button>
+              <button type="button" className="btn btn-outline-primary" onClick={() => setSelectedCustomer(null)}>Cancel</button>
+            </div>
           </form>
         </div>
       ) : (
         <div>
           <h2>Customers</h2>
-          {customers.map(customer => (
-            <div key={customer.id}>
-              {customer.first_name} {customer.last_name} - {customer.email}
-              <button onClick={() => handleEdit(customer)}>Edit</button>
-              <button onClick={() => handleDelete(customer.id)}>Delete</button>
-            </div>
-          ))}
+          <div className="list-group">
+            {customers.map(customer => (
+              <div key={customer.id} className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                {customer.first_name} {customer.last_name} - {customer.email}
+                <span>
+                  <button className="btn btn-outline-primary me-2" onClick={() => handleEdit(customer)}>Edit</button>
+                  <button className="btn btn-outline-primary" onClick={() => handleDelete(customer.id)}>Delete</button>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>

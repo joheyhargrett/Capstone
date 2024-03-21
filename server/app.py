@@ -210,6 +210,22 @@ class CustomerById(Resource):
 
 api.add_resource(CustomerById, '/customers/<int:id>')
 
+# Need to finsih code to add admin features
+
+# class SetAdmin(Resource):
+#     @admin_required  # Ensure this is a decorator that checks if the user is an admin
+#     def patch(self, user_id):
+#         user = Customer.query.get(user_id)
+#         if not user:
+#             return {'message': 'User not found'}, 404
+        
+#         user.role = 'admin'
+#         db.session.commit()
+#         return {'message': f'User {user_id} set as admin'}, 200
+
+# api.add_resource(SetAdmin, '/set-admin/<int:user_id>')
+
+
 class AllProduct(Resource):
     def get(self):
         products = Product.query.all()
@@ -217,7 +233,7 @@ class AllProduct(Resource):
         response_body = []
 
         for product in products:
-            response_body.append(product.to_dict(only=('id', 'name', 'price', 'description', 'image_url')))
+            response_body.append(product.to_dict(only=('id', 'name', 'price', 'description', 'image_url', 'category', 'stock_quantity')))
 
         return make_response(response_body, 200)
     
@@ -244,7 +260,7 @@ class ProductById(Resource):
         product = Product.query.filter(Product.id == id).first()
 
         if product:
-            response_body = product.to_dict(only=('id', 'name', 'price', 'description', 'image_url'))
+            response_body = product.to_dict(only=('id', 'name', 'price', 'description', 'image_url', 'category', 'stock_quantity', 'reviews.rating'))
             return make_response(response_body, 200)
         else:
             response_body = {
@@ -343,6 +359,20 @@ class ReviewById(Resource):
             return make_response(response_body, 404)
 api.add_resource(ReviewById, '/reviews/<int:id>')
 
+
+
+# class AverageRating(Resource):
+    
+#     def get(self, product_id):
+#         reviews = Review.query.filter(Review.product_id == product_id).all()
+#         ratings = [review.rating for review in reviews]
+#         average_rating = sum(ratings) / len(ratings)
+#         response_body = {'average_rating': average_rating}
+#         return make_response(response_body, 200)
+
+
+# api.add_resource(AverageRating, '/reviews/average_rating/<int:product_id>')
+
 class OrderedItems(Resource):
     def get(self):
         ordered_items = OrderedItem.query.all()
@@ -417,7 +447,11 @@ class OrderedItemsByID(Resource):
         
     
         
+    
+        
 api.add_resource(OrderedItemsByID, '/ordered_items/<int:id>')
+
+
 
 
 if __name__ == '__main__':

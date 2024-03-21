@@ -8,7 +8,8 @@ const Login = () => {
   const { setUser } = useUser();
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
     try {
       const response = await fetch('http://localhost:5555/login', {
         method: 'POST',

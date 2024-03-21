@@ -2,13 +2,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useUser } from './UserContext';
 
 
 const NavBar = () => {
+  const { user, setUser } = useUser();
+
     const state = useSelector((state) => state.handleCart)
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm sticky-top " >
         <div className="container">
           <Link className="navbar-brand fw-bold fs-4" to="/">
           TIMELESS TRENDS
@@ -48,12 +51,20 @@ const NavBar = () => {
               </li>
             </ul>
             <div className="buttons">
+              {user ?(<Link to="/Login" className="btn btn-outline-dark">
+                <i className="fa fa-sign-in me-1"></i> Logout
+              </Link>):
+              (
+              <>
               <Link to="/Login" className="btn btn-outline-dark">
                 <i className="fa fa-sign-in me-1"></i> Login
               </Link>
               <Link to="/SignUp" className="btn btn-outline-dark ms-2">
                 <i className="fa fa-user-plus me-1"></i> Sign Up
               </Link>
+              </>
+              )}
+              
               <Link to="/Cart" className="btn btn-outline-dark ms-2">
                 <i className="fa fa-shopping-cart me-1"></i> Cart ({state.length})
               </Link>

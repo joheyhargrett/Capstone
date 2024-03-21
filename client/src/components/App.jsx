@@ -10,7 +10,7 @@ import About from './About';
 import Contact from './Contact';
 import Cart from './Cart';
 import Products from './Products';
-import './About.css';
+import ErrorPage from './ErrorPage';
 import AdminPage from './AdminEdits';
 import CustomerDetails from './CustomerProfile';
 import Product from './Product';
@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <UserProvider>
-        <NavBar />
+        <NavBar  />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
@@ -33,6 +33,8 @@ function App() {
           <Route path="/CustomerDetails" element={<CustomerDetails />} />
           <Route path="/Products/:id" element={<Product />} />
           <Route path="/CheckOut" element={<CheckOut />} />
+          <Route path="/:Error" element={<ErrorPage />} />
+
 
           
         </Routes>

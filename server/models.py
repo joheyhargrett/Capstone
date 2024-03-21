@@ -70,6 +70,10 @@ class Product(db.Model, SerializerMixin):
     
     ordered_items = db.relationship('OrderedItem', back_populates='product', cascade='all, delete-orphan')
     
+    reviews = db.relationship('Review', back_populates="product", cascade="all, delete-orphan")
+    
+    
+    
     def __repr__(self):
         return f"<Product {self.id} {self.name} {self.description} {self.price} {self.stock_quantity} {self.category} {self.image_url}>"
 
@@ -85,7 +89,7 @@ class Review(db.Model, SerializerMixin):
     
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'))
     customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
-   
+    product = db.relationship('Product', back_populates="reviews")
     customer = db.relationship('Customer', back_populates="reviews")
     
     @validates('rating')

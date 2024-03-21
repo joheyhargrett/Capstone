@@ -24,28 +24,44 @@ const Products = () => {
     };
     getProducts();
   }, []);
-  const Loading = () => {
-    return (
-    <>
-      <div className="col-md-3">
-        <Skeleton height={350}/>
-      </div>
-      <div className="col-md-3">
-        <Skeleton height={350}/>
-      </div>
-      <div className="col-md-3">
-        <Skeleton height={350}/>
-      </div>
-      <div className="col-md-3">
-        <Skeleton height={350}/>
-      </div>
-    </>
-    );
+
+  const shuffle = (array) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
+    return shuffledArray;
   };
+
   const filterProduct = (cat) => {
     const updatedList = data.filter((x) => x.category === cat);
-    setFilter(updatedList);
-  }
+    const shuffledList = shuffle(updatedList);
+    setFilter(shuffledList);
+  };
+
+  const Loading = () => {
+    return (
+      <>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+      </>
+    );
+  };
+
   const ShowProducts = () => {
     return (
       <>
@@ -56,29 +72,34 @@ const Products = () => {
           <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("Teen's clothes")}>Teen Clothes</button>
           <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("kids clothes")}>Kids Clothes</button>
         </div>
+        <style>
+          {`.hover:hover {
+            transform: scale(1.05); /* Scale the card slightly on hover */
+            transition: transform 0.2s ease-in-out;
+          }`}
+        </style>
         {filter.map((product) => {
           return (
-            
-              <div className="col-md-3 mb-4" key = {product.id}>
-                <div className="card h-100 text-center p-4" key ={product.id}>
-                  <img src={product.image} className="card-img-top" alt={product.name} height="250px" />
-                  <div className="card-body">
-                    <h5 className="card-name mb-0">{product.name.substring(0, 12)}...</h5>
-                    <p className="card-text lead fw-bold">
-                      ${product.price}
-                    </p>
-                    <Link to={`/products/${product.id}`} className="btn btn-outline-dark">
-                      Buy Now
-                    </Link>
-                  </div>
+            <div className="col-md-3 mb-4" key={product.id}>
+              <div className="card h-100 text-center p-4 hover"> 
+                <img src={product.image_url} className="card-img-top " alt={product.name} height="250px" />
+                <div className="card-body">
+                  <h5 className="card-name mb-0">{product.name.substring(0, 12)}...</h5>
+                  <p className="card-text lead fw-bold">
+                    ${product.price.toFixed(2)}
+                  </p>
+                  <Link to={`/products/${product.id}`} className="btn btn-outline-dark">
+                    Buy Now
+                  </Link>
                 </div>
               </div>
-            
+            </div>
           );
         })}
       </>
     );
   };
+
   return (
     <div>
       <div className="container my-5 py-5">

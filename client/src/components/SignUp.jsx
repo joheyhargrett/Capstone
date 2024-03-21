@@ -21,7 +21,8 @@ const SignUp = () => {
     }));
   };
 
-  const handleSignUp = async () => {
+  const handleSignUp = async (e) => {
+    e.preventDefault();
     try {
       const response = await fetch('http://localhost:5555/signup', {
         method: 'POST',
@@ -112,6 +113,17 @@ const SignUp = () => {
 
         <div className="mb-3">
           <label className="form-label">Create A Password:</label>
+          <input
+            type="password"
+            className="form-control"
+            name="password"
+            value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Confirm Password:</label>
           <input
             type="password"
             className="form-control"
