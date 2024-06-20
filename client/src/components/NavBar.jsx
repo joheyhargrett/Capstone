@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useUser } from './UserContext';
-import LogoutButton from "./LogOut";
+import LogoutButton from "./LogOut"; // Ensure this is the correct import path
 
 const NavBar = () => {
   const { user } = useUser();
@@ -54,6 +54,9 @@ const NavBar = () => {
                 <span className="navbar-text me-2">
                   Welcome, {user.first_name}!
                 </span>
+                <Link to="/CustomerDetails" className="btn btn-outline-dark edit-info-btn me-2">
+                  Edit Profile
+                </Link>
                 <LogoutButton />
               </>
             ) : (

@@ -31,7 +31,7 @@ const Login = () => {
       const data = await response.json();
       console.log('Login successful:', data);
       setUser(data); 
-      navigate('/CustomerDetails');
+      navigate('/');
     } catch (error) {
       console.error('Error during login:', error);
     }
