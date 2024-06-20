@@ -22,9 +22,9 @@ from models import Customer, Review, Product, OrderedItem
 def index():
     return '<h1>Project Server</h1>'
 
-
-
 api = Api(app)
+
+
 
 
 # Resource for handling requests for all customers
@@ -59,9 +59,12 @@ class Login(Resource):
         
         if customer and customer.authenticate(customer_password):
             # Setting the customer id in the session if the password is correct
+         
             session['customer_id'] = customer.id
+            
             response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number'))
-            return make_response(response_body, 201)
+            
+            return make_response(response_body, 201) 
         else:
             response_body = {
                 'error': 'Login Failed',
@@ -77,10 +80,14 @@ class CheckSession(Resource):
     def get(self):
         # Retrieving the customer ID from the session
         customer_id = session.get('customer_id')
+       
+        print(customer_id)
         if customer_id:
             # Querying the customer with the customer ID from the session
 
-            customer = Customer.query.get(customer_id)
+            customer = Customer.query.filter(Customer.id == customer_id).first()
+            
+            print(customer)
             if customer:
                 # Prepare response body with detailed customer information
                 response_body = customer.to_dict(only=('id', 'email', 'first_name', 'last_name', 'address', 'phone_number'))
@@ -98,13 +105,14 @@ api.add_resource(CheckSession, '/check_session')
 
 
 class Logout(Resource):
-    # Clear the customer ID from the session
-   def get(self):
-        session['customer_id'] = None
-        print(session)
-        response_body = {}
-        return make_response(response_body, 204)
-# Add the '/logout' endpoint to the API with the Logout resource
+    def delete(self):
+        if session.get('customer_id'):
+            session['customer_id'] = None 
+            session.pop('customer_id', None)
+            response = make_response({"message": "Logged out successfully"}, 200)
+            response.set_cookie('id', '', expires=0, path='/', httponly=True)  # Clear the 'id' cookie
+            return response
+        return make_response({'error': 'Unauthorized'}, 401)
     
 api.add_resource(Logout, '/logout')
  

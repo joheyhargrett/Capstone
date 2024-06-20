@@ -222,12 +222,36 @@ with app.app_context():
         "image_url": "https://forwomenusa.com/cdn/shop/products/off-shoulder-short-sleeve-sundress-women-dress-forwomenusa-28391985217685.jpg?v=1663780560"
     },
     {
+        "name": "Sweet Treat Jumpsuit Yellow",
+        "price": 54.99,
+        "description": "Elevate your style game with our 'Sweet Treat' jumpsuit in a stunning yellow hue that exudes all the vibes of a vibrant sunset. This eye-catching piece is designed for the woman who loves to make a statement and stand out from the crowd.",
+        "category": "women's clothes",
+        "stock_quantity": 27,
+        "image_url": "https://www.divaboutiqueonline.com/cdn/shop/files/Facetune_26-03-2024-14-37-40_1536x.jpg?v=1711482604"
+    },
+    {
         "name": "Elegance Pearls Rhinestone Party Dresses",
         "price": 65.99,
         "description": "Looking for something to wear to that special event? Say no more. With our beautiful collection of affordable, trendy party dresses at Elegance Pearls Rhinestone, you'll never have a hard time finding the perfect thing for any occasion. For the woman with discerning tastes, our elegant collection of affordable, trendy party dresses at Elegance Pearls Rhinestone is sure to please. With a wide variety of styles and colors to choose from, you're guaranteed to find that perfect dress that'll have you looking radiant from head to toe.",
         "category": "women's clothes",
         "stock_quantity": 25,
         "image_url": "https://forwomenusa.com/cdn/shop/products/sexy-pearls-rhinestone-party-dresses-women-elegance-nightclub-feather-birthday-dress-long-sleeve-mesh-sheer-bodycon-mini-dress-forwomenusa-37752835080416.jpg?v=1663779180"
+    },
+    {
+        "name": "Do Not Go Mesh Maxi Dress Set Orange",
+        "price": 54.99,
+        "description": "Get ready to turn heads with this stunning mesh skirt set that exudes autumnal vibes all year long. The mesmerizing leaf print in warm, vibrant hues creates a captivating look that is sure to make a statement.The breezy, sheer fabric of this two-piece set effortlessly drapes over your silhouette, offering a versatile and alluring style for the fashion-forward individual. Constructed with 95% polyester and 5% spandex, this set has the perfect amount of stretch for a comfortable and flattering fit. Complete with an adjustable tie, this set allows you to customize your look to suit your unique style. Whether you're hitting the town or attending a special event, this set is a must-have for the modern fashionista.",
+        "category": "women's clothes",
+        "stock_quantity": 25,
+        "image_url": "https://www.divaboutiqueonline.com/cdn/shop/files/Facetune_30-04-2024-13-52-40_1536x.jpg?v=1714519240"
+    },
+    {
+        "name": "Never Ending Midi Dress Black",
+        "price": 64.99,
+        "description": "Elevate your evening wardrobe with our stunning black and beige striped bodycon dress, designed to make a statement. This strapless beauty features bold horizontal stripes that perfectly contour your silhouette, offering a sleek and sophisticated look. The seamless design and stretchy fabric ensure a comfortable yet flattering fit, ideal for any upscale event or night out.",
+        "category": "women's clothes",
+        "stock_quantity": 37,
+        "image_url": "https://www.divaboutiqueonline.com/cdn/shop/files/Facetune_14-05-2024-17-09-08_1536x.jpg?v=1715731625"
     },
     {
         "name": "Sequin Night Club Party Midi Dress",
@@ -242,6 +266,14 @@ with app.app_context():
         "description": "If you are in search of chic and stylish-looking pants, then it’s time to end that hunt. The High Waist Wide Leg Pants for Women is all that you have dreamt about. They are the perfect pair to wear to the office every day. You can find them in 2 different shades: beige and black. It is available in sizes ranging from S to L. Team it up with a nice blouse and a sweet pair of pumps, and you are all good to go. So go get this lovely piece before someone else sweeps it away!",
         "image_url": "https://forwomenusa.com/cdn/shop/products/high-waist-wide-leg-pants-for-women-as-picture-s-forwomenusa-19028151959701.jpg?v=1663779773",
         "price": 29.99,
+        "stock_quantity": 20,
+        "category": "women's clothes"
+    },
+    {
+        "name": "Sweet Treat Jumpsuit Orange",
+        "description": 'Elevate your fashion game with our "Sweet Treat" jumpsuit in a bold and vibrant orange hue. This eye-catching piece is designed for the woman who loves to make a statement and stand out from the crowd. The flattering keyhole neckline and cinched waist accentuate your figure, giving you a sleek and sophisticated silhouette thats impossible to ignore.',
+        "image_url": "https://www.divaboutiqueonline.com/cdn/shop/files/Facetune_26-03-2024-14-22-32_1536x.jpg?v=1711482429",
+        "price": 54.99,
         "stock_quantity": 20,
         "category": "women's clothes"
     },
@@ -318,12 +350,12 @@ with app.app_context():
         'category': "women’s clothes"
     },
     {
-        "name": "Fingers Crossed Denim Jacket - Medium Wash",
-        "price": 98.99,
+        "name": "Just For You Ripped Non Stretch Straight Leg Jean",
+        "price": 27.99,
         "description": "Pop in this oversized denim jacket and be ready to go. With it's classic medium wash, figure hugging waist and oversized chest fabric for a layered look. Pair with a cute dress or rock with your everyday jeans",
         "category": "women's clothes",
         "stock_quantity": 40,
-        "image_url": "https://shopswankaposh.com/cdn/shop/products/IMG_9972_6c1b3361-26fb-43b7-8caf-50454c3f819c_2500x.jpg?v=1677100161"
+        "image_url": "https://www.fashionnova.com/cdn/shop/products/03-02-23Studio1_TH_B_10-32-03_27_FN24598FT36_LightWash_5871_EH.jpg?v=1678224286"
     },
     {
         "name": "Ring My Bells Bell Bottom Flare Jeans - Light Wash",
@@ -334,12 +366,12 @@ with app.app_context():
         "image_url": "https://shopswankaposh.com/cdn/shop/files/20231115-352A6927_2500x.jpg?v=1703022508"
     },
     {
-        "name": "Ring My Bells Bell Bottom Flare Jeans - Light Wash",
-        "price": 69.99,
-        "description": "Ring bae's bells, ring my bells bae! Shake things up in our classic Ring My Bell Bottoms! These jeans are perfect for any occasion or any season! If you don't grab the dark wash, be sure to grab the life wash!",
+        "name": "For Your Thoughts High Rise Skinny Jeans - Medium Wash",
+        "price": 59.99,
+        "description": "Take a moment and gather your thoughts on these stylish jeans, featuring a high-rise waist. zippered closure, belt loops, front and rear pockets, and a skinny leg fit with distressing at the knees and frayed ankles.",
         "category": "women's clothes",
-        "stock_quantity": 30,
-        "image_url": "https://shopswankaposh.com/cdn/shop/files/20231115-352A6927_2500x.jpg?v=1703022508"
+        "stock_quantity": 15,
+        "image_url": "https://shopswankaposh.com/cdn/shop/files/20240308-352A3971_2048x.jpg?v=1709915992"
     },
     {
         "name": "Juniors' SO® BOHO Cardigan",

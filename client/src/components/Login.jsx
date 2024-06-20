@@ -17,6 +17,7 @@ const Login = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
+        credentials: 'include'
       });
 
       if (!response.ok) {
@@ -48,7 +49,7 @@ const Login = () => {
                   <label htmlFor="emailInput" className="form-label">Email</label>
                   <input
                     type="email"
-                    className="form-control py-2" // py-2 for taller input fields
+                    className="form-control py-2"
                     id="emailInput"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +60,7 @@ const Login = () => {
                   <label htmlFor="passwordInput" className="form-label">Password</label>
                   <input
                     type="password"
-                    className="form-control py-2" // py-2 for taller input fields
+                    className="form-control py-2"
                     id="passwordInput"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}

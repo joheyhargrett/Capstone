@@ -1,8 +1,8 @@
-"""Initial migration
+"""initial migration
 
-Revision ID: 020a4fa693fb
+Revision ID: e3f2b7f9d018
 Revises: 
-Create Date: 2024-01-08 22:35:28.899214
+Create Date: 2024-06-19 11:57:50.508484
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '020a4fa693fb'
+revision = 'e3f2b7f9d018'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,7 +23,7 @@ def upgrade():
     sa.Column('first_name', sa.String(length=100), nullable=False),
     sa.Column('last_name', sa.String(length=100), nullable=False),
     sa.Column('email', sa.String(length=120), nullable=False),
-    sa.Column('password', sa.String(length=255), nullable=False),
+    sa.Column('_password_hash', sa.String(length=255), nullable=True),
     sa.Column('address', sa.String(length=255), nullable=False),
     sa.Column('phone_number', sa.String(length=20), nullable=False),
     sa.PrimaryKeyConstraint('id'),
@@ -36,8 +36,8 @@ def upgrade():
     sa.Column('description', sa.Text(), nullable=True),
     sa.Column('price', sa.Float(), nullable=False),
     sa.Column('stock_quantity', sa.Integer(), nullable=False),
-    sa.Column('category', sa.String(length=50), nullable=True),
-    sa.Column('image_url', sa.String(length=255), nullable=True),
+    sa.Column('category', sa.String(length=50), nullable=False),
+    sa.Column('image_url', sa.String(length=255), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('ordered_items',

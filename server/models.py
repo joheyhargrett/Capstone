@@ -53,7 +53,7 @@ class Customer(db.Model, SerializerMixin):
         
 
     def __repr__(self):
-        return f"<Customer {self.id} {self.first_name} {self.last_name} {self.email}  {self.address} {self.phone_number} {self.password}>"
+        return f"<Customer {self.id} {self.first_name} {self.last_name} {self.email}  {self.address} {self.phone_number} >"
 
 
 

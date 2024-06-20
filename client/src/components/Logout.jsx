@@ -1,21 +1,20 @@
 import React from "react";
 import { useUser } from "./UserContext";
+import { Link } from "react-router-dom";
 
 const LogoutButton = () => {
   const { handleLogout } = useUser();
 
-  const handleLogoutClick = async () => {
-    try {
-      const response = await fetch("http://localhost:5555/logout", { method: 'POST' });
-      if (response.ok) {
-        handleLogout();
-      }
-    } catch (error) {
-      console.error("Error during logout:", error);
-    }
+  const handleLogoutClick = async (e) => {
+    e.preventDefault();
+    handleLogout();
   };
 
-  return <button onClick={handleLogoutClick}>Logout</button>;
+  return (
+    <Link to="/Login" onClick={handleLogoutClick} className="btn btn-outline-dark">
+      <i className="fa fa-sign-in me-1"></i> Logout
+    </Link>
+  );
 };
 
 export default LogoutButton;

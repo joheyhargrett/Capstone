@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useUser } from './UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const CustomerDetails = () => {
   // Initialize state variables
@@ -9,35 +11,43 @@ const CustomerDetails = () => {
   const [address, setAddress] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   
+  const { user } = useUser();
+  const navigate = useNavigate();
 
-  // Replace 'customerId' with the actual customer ID
-  const customerId = 123;
-
-  // Use useEffect to fetch customer details when the component mounts
   useEffect(() => {
-    fetch(`http://localhost:5555/customers/${customerId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setCustomer(data);
-        setFirstName(data.firstName);
-        setLastName(data.lastName);
-        setAddress(data.address);
-        setPhoneNumber(data.phoneNumber);
-      })
-      .catch((error) => {
+    if (!user) {
+      navigate("/Login");
+      return;
+    }
+    
+    const fetchCustomerDetails = async () => {
+      try {
+        const response = await fetch(`http://localhost:5555/customers/${user.id}`);
+        if (response.ok) {
+          const data = await response.json();
+          setCustomer(data);
+          setFirstName(data.first_name || '');
+          setLastName(data.last_name || '');
+          setAddress(data.address || '');
+          setPhoneNumber(data.phone_number || '');
+        }
+      } catch (error) {
         console.error('Error fetching customer details:', error);
-      });
-  }, []);
+      }
+    };
+
+    fetchCustomerDetails();
+  }, [user, navigate]);
 
   const handleUpdate = () => {
     const updatedCustomer = {
-      firstName: firstName,
-      lastName: lastName,
-      address: address,
-      phoneNumber: phoneNumber,
+      first_name: firstName,
+      last_name: lastName,
+      address,
+      phone_number: phoneNumber,
     };
 
-    fetch(`http://localhost:5555/customers/${customerId}`, {
+    fetch(`http://localhost:5555/customers/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -57,12 +67,12 @@ const CustomerDetails = () => {
   };
 
   const handleDeleteAccount = () => {
-    fetch(`http://localhost:5555/customers/${customerId}`, {
+    fetch(`http://localhost:5555/customers/${user.id}`, {
       method: 'DELETE',
     })
       .then((response) => {
         if (response.ok) {
-          // Handle successful deletion, e.g., redirect or show confirmation
+          navigate("/Login");
         } else {
           console.error('Deletion failed:', response.status, response.statusText);
         }
@@ -71,6 +81,10 @@ const CustomerDetails = () => {
         console.error('Error during deletion:', error);
       });
   };
+
+  if (!user) {
+    return null;
+  }
 
   return (
     <div className="container my-5">

@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <UserProvider>
-        <NavBar  />
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
@@ -33,10 +33,7 @@ function App() {
           <Route path="/CustomerDetails" element={<CustomerDetails />} />
           <Route path="/Products/:id" element={<Product />} />
           <Route path="/CheckOut" element={<CheckOut />} />
-          <Route path="/:Error" element={<ErrorPage />} />
-
-
-          
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </UserProvider>
     </Router>
@@ -44,5 +41,3 @@ function App() {
 }
 
 export default App;
-
-

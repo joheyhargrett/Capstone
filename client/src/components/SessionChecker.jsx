@@ -2,12 +2,12 @@ import  { useEffect } from "react";
 import { useUser } from "./UserContext";
 
 const SessionChecker = () => {
-  const { handleLogin } = useUser();
+  const { user, setUser} = useUser();
 
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const response = await fetch("http://localhost:5555/check_session");
+        const response = await fetch("http://localhost:5555/check_session" , {credentials: "include"});
         if (response.ok) {
           const data = await response.json();
           handleLogin(data);
