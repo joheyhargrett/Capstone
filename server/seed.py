@@ -118,11 +118,51 @@ with app.app_context():
         "category": "men's clothes"
     },
        {
+        "name": "Drop-Cut: LUX Dotted Polo",
+        "description": "The sophisticated LUX Polo has everything you need to stay fresh all day long.  With cool-touch technology and our iconic drop-cut hemline, you'll be reaching for this Polo every morning.",
+        "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/LUXPOLODOTTED_BONE1_d5bcbdab-ece7-40e5-97af-69723c104109.jpg?v=1692029239&width=960&quality=90",
+        "price": "47.99",
+        "stock_quantity": 12,
+        "category": "men's clothes"
+    },
+       {
         "name": "The Everyday Pant 2.0",
         "description": "For those on the move - this versatile style has been improved in every way, the Everyday Pant 2.0 is our answer to your quest for the perfect pant. Now featuring a premium flex-stretch fabrication and all around updated tapered cut, this iconic silhouette brings added comfort and elegance to your wardrobe.",
         "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/files/EVERYDAY-PANT-2.0_Tan_PCUpdate09_ff020adc-3937-495d-af8a-6f64a0fd13ba.jpg?v=1713378970&width=960&quality=90",
         "price": "119.99",
         "stock_quantity": 15,
+        "category": "men's clothes"
+    },
+    {
+        "name": "Drop-Cut: BYLT Signature",
+        "description": 'With all the best features you deserve, you’ve finally found a shirt that doesn’t shrink, doesn’t fade, has breathability, ultra-stretch and holds up wash-after-wash. As the one that started them all, The “BYLT Signature” Fabric takes this a step further with an unmatched level of comfort in its soft-touch feel, a looser drape for ultimate mobility, and natural performance wicking for the best in class daily wear, making this your new go-to for wherever the day takes you.',
+        "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/White02_62643f8e-223c-4dc9-98e9-c10ca83663cc.jpg?v=1704398525&width=960&quality=90",
+        "price": "29.99",
+        "stock_quantity": 16,
+        "category": "men's clothes"
+    },
+     {
+        "name": "Jaheem African Print Short Sleeve T-shirt (Green Tortoise Back)",
+        "description": "The Jaheem African Print Short Sleeve Tee (Green Tortoise Back) elevates your casual wear, creating a more sophisticated ensemble for the refined gentleman. As a transitional piece, sport the tee with a pair of jeans or dress pants. Take advantage of this multipurpose piece, as it is what your wardrobe's been missing! ",
+        "image_url": "https://www.diyanu.com/cdn/shop/products/men-s-tops-jaheem-african-print-short-sleeve-t-shirt-green-tortoise-back-1_1000x1400.jpg?v=1548258902",
+        "price": 34.99,
+        "stock_quantity": 12,
+        "category": "men's clothes"
+    },
+     {
+        "name": "Elite+ Fairway Drop-Cut Pullover",
+        "description": "With its magnetic seam system, this pullover design allows for a unique solution to ultimate mobility. Large double hidden interior pockets provide a low profile versatility for those on the go. Made complete with the soft herringbone contrast collar, this pullover is the perfect layering piece for a truly sophisticated style. ",
+        "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/Fairway-Storm1.jpg?v=1716245346&width=960&quality=90",
+        "price": 99.99,
+        "stock_quantity": 19,
+        "category": "men's clothes"
+    },
+      {
+        "name": "Adil Men's Traditional Dress Pants with Drawstring (White)",
+        "description": "Stretch the Summer! Our Adil drawstring pants are the perfect one-color coordinate for our multi-hued new collection. Lithe and lustrous in white stretch cotton sateen, they pair strikingly with any of our traditional tops, applique T-shirts or button-up short sleeves. The sleek cut works for just about any summer occasion, from poolside to cook-out.",
+        "image_url": "https://www.diyanu.com/cdn/shop/products/Mens-Adil-pants-white3_971x1371.jpg?v=1652718560",
+        "price": 64.99,
+        "stock_quantity": 26,
         "category": "men's clothes"
     },
     {
