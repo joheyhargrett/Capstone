@@ -94,6 +94,14 @@ with app.app_context():
         "category": "men's clothes"
     },
     {
+        "name": "LUX Short Sleeve Button Down",
+        "description": "Our best-selling fabric in all new styles. With a structured drape for that always clean, crisp look, our new LUX styles have just the right amount of stretch making these your new go-to from office to night out.",
+        "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/files/D4LUXShortSleeveButtonDownWhite_0825.jpg?v=1713473250&width=960&quality=90",
+        "price": "59.99",
+        "stock_quantity": 15,
+        "category": "men's clothes"
+    },
+    {
         "name": "Men's Cotton Crewneck Sweater",
         "description": "Polo Ralph Lauren's sweater will keep you comfortably warm when the mercury drops, thanks to its soft, breathable cotton.",
         "image_url": "https://slimages.macysassets.com/is/image/MCY/products/8/optimized/22814998_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1",
