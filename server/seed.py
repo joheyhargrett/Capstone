@@ -162,7 +162,7 @@ with app.app_context():
         "description": "Stretch the Summer! Our Adil drawstring pants are the perfect one-color coordinate for our multi-hued new collection. Lithe and lustrous in white stretch cotton sateen, they pair strikingly with any of our traditional tops, applique T-shirts or button-up short sleeves. The sleek cut works for just about any summer occasion, from poolside to cook-out.",
         "image_url": "https://www.diyanu.com/cdn/shop/products/Mens-Adil-pants-white3_971x1371.jpg?v=1652718560",
         "price": 64.99,
-        "stock_quantity": 26,
+        "stock_quantity": 12,
         "category": "men's clothes"
     },
     {
@@ -203,6 +203,22 @@ with app.app_context():
         "image_url": "https://slimages.macysassets.com/is/image/MCY/products/2/optimized/26328262_fpx.tif?op_sharpen=1&wid=1200&fit=fit,1&$filtersm$&fmt=webp",
         "price": 109.99,
         "stock_quantity": 28,
+        "category": "men's clothes"
+    },
+     {
+        "name": "Rammy Men's African Print Blazer (Black Brown Geometric)",
+        "description": "Be stylish and unique at your next formal event in our Rammy African print blazer jacket!",
+        "image_url": "https://www.diyanu.com/cdn/shop/files/jackets-rammy-men-s-african-print-blazer-black-brown-geometric-3_1_1000x1400.jpg?v=1713274765",
+        "price": 112.99,
+        "stock_quantity": 25,
+        "category": "men's clothes"
+    },
+     {
+        "name": "Asan Men's Linen Blend Pants (Sand)",
+        "description": "Embrace the warmth of the season with our Asan Linen Blend Pants in Sand. These pants are the ideal color for our vibrant new collection, offering a solid base to match any look. Made from lightweight, breathable linen, you'll have comfort and style for any summer outing, from beach days to evening barbecues. ",
+        "image_url": "https://www.diyanu.com/cdn/shop/files/Mens-Ajisomo-AfricanPrint-Tunic-WhiteOliveTribal12_d2e0e98a-ccaa-4de5-8ee1-ce7cd0325b04_620x868.jpg?v=1715104059",
+        "price": 64.99,
+        "stock_quantity": 12,
         "category": "men's clothes"
     },
     {
@@ -284,6 +300,22 @@ with app.app_context():
         "category": "women's clothes",
         "stock_quantity": 26,
         "image_url": "https://media.kohlsimg.com/is/image/kohls/6340487_ALT60?wid=1500&hei=1500&op_sharpen=1&qlt=60"
+    },
+     {
+        "name": "ATHLETIC FIT STRETCH SUIT PANTS - HEATHERED LIGHT BLUE",
+        "description": "Built on the forefront of fit, comfort, and a professional look - these are the perfect dress pants for guys with athletic legs. The fit is built for guys who need more room in the seat, thighs, and quads while still looking to achieve a tapered look. The insane amount of stretch in these slacks allow them to be worn tailored without sacrificing comfort.",
+        "image_url": "https://sfycdn.speedsize.com/2780c694-3419-4266-9652-d242439affeb/https://stateandliberty.com/cdn/shop/files/BlakeCashmanHLB3_7579ae99-f8b0-463f-b050-dbd04ca68186.jpg?v=1700680911&width=800",
+        "price": 79.99,
+        "stock_quantity": 18,
+        "category": "men's clothes"
+    },
+     {
+        "name": "Rashida Women's Stretch Dress (Black)",
+        "description": "The Rashida Women's Stretch Dress in Black captivates with its off-the-shoulder design, blending sleek sophistication with understated elegance. Its form-fitting stretch fabric ensures a stunning silhouette, while the unique neckline adds a touch of allure. ",
+        "image_url": "https://www.diyanu.com/cdn/shop/files/RashidaWomen_sAfricanPrintStretchDress_Black_-5_c9b2bd7c-57e2-4af3-9f0c-c9a538817f0f_800x.jpg?v=1716320718",
+        "price": 59.99,
+        "stock_quantity": 26,
+        "category": "men's clothes"
     },
     {
         "name": "Off Shoulder Short Sleeve Sundress",
