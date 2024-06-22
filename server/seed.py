@@ -101,6 +101,30 @@ with app.app_context():
         "stock_quantity": 15,
         "category": "men's clothes"
     },
+     {
+        "name": "Drop-Cut: LUX Polo",
+        "description": "The sophisticated LUX Polo has everything you need to stay fresh all day long. With cool-touch technology and our iconic drop-cut hemline, you'll be reaching for this Polo every morning.",
+        "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/LuxPolo-Navy1.jpg?v=1715706020&width=960&quality=90",
+        "price": "49.99",
+        "stock_quantity": 22,
+        "category": "men's clothes"
+    },
+      {
+        "name": "Executive Stretch Short Sleeve",
+        "description": "Introducing the Executive Stretch Short Sleeve - the ultimate button-up for the modern professional. Crafted with lightweight, stay-cool fabric, this stretch-fit design is tailored to perfection, so you can step into wherever the day takes you with renewed confidence and ultimate comfort.",
+        "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/products/Black_ExecStretch_SS-4.jpg?v=1716324398&width=960&quality=90",
+        "price": "79.99",
+        "stock_quantity": 15,
+        "category": "men's clothes"
+    },
+       {
+        "name": "The Everyday Pant 2.0",
+        "description": "For those on the move - this versatile style has been improved in every way, the Everyday Pant 2.0 is our answer to your quest for the perfect pant. Now featuring a premium flex-stretch fabrication and all around updated tapered cut, this iconic silhouette brings added comfort and elegance to your wardrobe.",
+        "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/files/EVERYDAY-PANT-2.0_Tan_PCUpdate09_ff020adc-3937-495d-af8a-6f64a0fd13ba.jpg?v=1713378970&width=960&quality=90",
+        "price": "119.99",
+        "stock_quantity": 15,
+        "category": "men's clothes"
+    },
     {
         "name": "Men's Cotton Crewneck Sweater",
         "description": "Polo Ralph Lauren's sweater will keep you comfortably warm when the mercury drops, thanks to its soft, breathable cotton.",
