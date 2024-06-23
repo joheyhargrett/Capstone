@@ -331,7 +331,15 @@ with app.app_context():
         "image_url": "https://www.diyanu.com/cdn/shop/files/RashidaWomen_sAfricanPrintStretchDress_Black_-5_c9b2bd7c-57e2-4af3-9f0c-c9a538817f0f_800x.jpg?v=1716320718",
         "price": 59.99,
         "stock_quantity": 26,
-        "category": "men's clothes"
+        "category": "women's clothes"
+    },
+     {
+        "name": "Culture Code Full Size Ribbed Zip Up Drawstring Hooded Jacket",
+        "description": "This jacket is a trendy and versatile piece that adds a touch of texture to any outfit. With its zip closure and adjustable drawstring hood, it offers both style and functionality.",
+        "image_url": "https://e2gworld.com/cdn/shop/files/95b69071-d0da-40a6-a226-8901c2812ed2-Max_934x1400.jpg?v=1718972132",
+        "price": 29.99,
+        "stock_quantity": 25,
+        "category": "women's clothes"
     },
     {
         "name": "Off Shoulder Short Sleeve Sundress",
@@ -799,6 +807,7 @@ with app.app_context():
             db.session.commit()
 
     print("Seeding reviews...")
+    
     # List to store review instances
     reviews = []
     i = 1
