@@ -286,6 +286,14 @@ with app.app_context():
         "image_url":  "https://media.kohlsimg.com/is/image/kohls/2483201_Steely_Blue?wid=805&hei=805&op_sharpen=1"
     },
     {
+        "name": "Cotton Men’s Cardigan",
+        "description": "Supremely soft with intricate cable knit, this gorgeous shawl collar cardigan is made from plush organic cotton with a touch of luxurious linen to layer from season to season.",
+        "image_url": "https://i0.wp.com/guiltyfashionboutique.com/wp-content/uploads/2024/05/facetune_22-04-2024-21-47-06.jpeg?fit=1440%2C1920&ssl=1",
+        "price": 64.99,
+        "stock_quantity": 12,
+        "category": "men's clothes"
+    },
+    {
         "name": "Women's Simply Vera Vera Wang Cable Knit Pullover Sweater",
         "price": 44.99,
         "description": "Be comfy and cozy this fall season with this women's Simply Vera Vera Wang cable knit pullover sweater.",
