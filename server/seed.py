@@ -286,6 +286,14 @@ with app.app_context():
         "image_url":  "https://media.kohlsimg.com/is/image/kohls/2483201_Steely_Blue?wid=805&hei=805&op_sharpen=1"
     },
     {
+        "name": "Haptics Floral Crochet Side Slit Knit Top",
+        "description": "This floral crochet side slit knit top is a beautiful and elegant addition to your wardrobe. The floral crochet detail adds a touch of femininity and charm to the classic knit design. With side slits for added style and movement, this top is perfect for both casual and dressy occasions. The lightweight knit material makes it comfortable to wear all day long. Pair it with your favorite jeans or skirt for a stylish and effortless look. Make a statement with this chic and versatile top that effortlessly combines sophistication with a hint of floral flair.",
+        "image_url": "https://e2gworld.com/cdn/shop/files/477204d8-b7ab-4d37-8a07-f4bbc9f31c89-Max_1000x1500.jpg?v=1718897489",
+        "price": 34.99,
+        "stock_quantity": 30,
+        "category": "women's clothes"
+    },
+    {
         "name": "Cotton Men’s Cardigan",
         "description": "Supremely soft with intricate cable knit, this gorgeous shawl collar cardigan is made from plush organic cotton with a touch of luxurious linen to layer from season to season.",
         "image_url": "https://i0.wp.com/guiltyfashionboutique.com/wp-content/uploads/2024/05/facetune_22-04-2024-21-47-06.jpeg?fit=1440%2C1920&ssl=1",
