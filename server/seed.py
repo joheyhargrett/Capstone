@@ -341,6 +341,14 @@ with app.app_context():
         "stock_quantity": 25,
         "image_url": "https://forwomenusa.com/cdn/shop/products/sexy-pearls-rhinestone-party-dresses-women-elegance-nightclub-feather-birthday-dress-long-sleeve-mesh-sheer-bodycon-mini-dress-forwomenusa-37752835080416.jpg?v=1663779180"
     },
+     {
+        "name": "Ruby Ola Voga Women’s Ribbed Top, Grey",
+        "description": "The Ruby women’s top is a must-have for women who like fashionable and comfortable styles. A fitted cut crop top perfectly emphasizes feminine shapes and at the same time ensures full comfort of wearing. Made of high-quality ribbed cotton, it guarantees softness and delicacy of touch. There is a subtle embroidered patch with the OLAVOGA logo on the front, adding a unique character to the whole. This top is perfect for both everyday and special occasions, giving you a stylish look and a sense of self-confidence.",
+        "image_url": "https://i0.wp.com/guiltyfashionboutique.com/wp-content/uploads/2024/04/img_6794.jpeg?fit=600%2C800&ssl=1",
+        "price": 34.99,
+        "stock_quantity": 37,
+        "category": "women's clothes"
+    },
     {
         "name": "Do Not Go Mesh Maxi Dress Set Orange",
         "price": 54.99,
