@@ -486,6 +486,14 @@ with app.app_context():
         'category': "women’s clothes"
     },
     {
+        "name": "Graphic Red Lips Graphic Tee",
+        "description": "Graphic Red Lips Graphic Tee",
+        "image_url": "https://e2gworld.com/cdn/shop/files/20547828_4bdaad87-38cd-49a0-a893-e60fe31daf4a_596x798.jpg?v=1700663850",
+        "price": 34.99,
+        "stock_quantity": 12,
+        "category": "women's clothes"
+    },
+    {
         "name": "Skinny Butt Lift Ripped Jeans",
         "description": "If you're looking for a pair of jeans that will enhance your figure and keep you stylish at the same time, then Skinny Butt Lift Ripped Jeans are the perfect choice for you. Made from premium quality cotton, these jeans are both comfortable and durable, ensuring that you'll be able to wear them time and time again. The high waist design of these jeans provides a flattering and slimming effect, while the skinny fit hugs your curves and accentuates your natural curves.",
         "image_url": "https://forwomenusa.com/cdn/shop/products/skinny-butt-lift-ripped-jeans-women-jeans-blue-s-china-forwomenusa-38583452664032.jpg?v=1675215831",
