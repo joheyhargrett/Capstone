@@ -126,6 +126,14 @@ with app.app_context():
         "category": "men's clothes"
     },
        {
+        "name": "American Bazi Distressed Button Down Denim Shirt Jacket",
+        "description": "The distressed button-down denim shirt jacket exudes a casual yet rugged style. With its worn-in appearance, it adds a touch of authenticity to any outfit. Whether paired with jeans or layered over a dress, it effortlessly enhances your fashion game. The comfortable fit and durable fabric make it a go-to choice for everyday wear. The unique distressed details give it a vintage-inspired charm that sets it apart from regular denim jackets. Elevate your wardrobe with this versatile and trendy piece now.",
+        "image_url": "https://e2gworld.com/cdn/shop/files/6dff7598-d222-4289-8dba-5084f6d1873f-Max_934x1400.jpg?v=1718972165",
+        "price": 32.99,
+        "stock_quantity": 15,
+        "category": "women's clothes"
+    },
+       {
         "name": "The Everyday Pant 2.0",
         "description": "For those on the move - this versatile style has been improved in every way, the Everyday Pant 2.0 is our answer to your quest for the perfect pant. Now featuring a premium flex-stretch fabrication and all around updated tapered cut, this iconic silhouette brings added comfort and elegance to your wardrobe.",
         "image_url": "https://cdn.shopify.com/s/files/1/1464/5034/files/EVERYDAY-PANT-2.0_Tan_PCUpdate09_ff020adc-3937-495d-af8a-6f64a0fd13ba.jpg?v=1713378970&width=960&quality=90",
