@@ -93,6 +93,14 @@ with app.app_context():
         "stock_quantity": 20,
         "category": "men's clothes"
     },
+     {
+        "name": "Tres Chic Poplin Shirt - Blue",
+        "description": "Elevate your wardrobe with the Tres Chic Poplin Shirt in Blue, also available in White. This stylish collared shirt features a classic button-down design and a modern dolphin hem. With a slight stretch for added comfort, it’s made from a blend of 65% cotton, 30% nylon, and 5% spandex. Perfect for a chic, polished look that effortlessly transitions from day to night.",
+        "image_url": "https://www.fashionnova.com/cdn/shop/products/TresChicPoplinShirt-Blue_MER_468x@2x.jpg?v=1649101280",
+        "price": 24.99,
+        "stock_quantity": 17,
+        "category": "women's clothes"
+    },
     {
         "name": "LUX Short Sleeve Button Down",
         "description": "Our best-selling fabric in all new styles. With a structured drape for that always clean, crisp look, our new LUX styles have just the right amount of stretch making these your new go-to from office to night out.",
@@ -597,6 +605,38 @@ with app.app_context():
         "stock_quantity": 40,
         "image_url": "https://www.fashionnova.com/cdn/shop/products/03-02-23Studio1_TH_B_10-32-03_27_FN24598FT36_LightWash_5871_EH.jpg?v=1678224286"
     },
+     {
+        "name": "Casual Friday Set",
+        "description": "Paired to perfection, the Casual Friday Set offers an effortless, instant outfit. This stunning ensemble includes a slim, cropped tank with a button-up design, scoop neckline, smocked back, and tie-back straps, paired with high-rise, wide-leg trousers featuring side pockets, top pleating, and a zip fly with button closure. Adorned in a summer-ready striped print, this set is perfect for chic, casual wear all season long.",
+        "image_url": "https://images.urbndata.com/is/image/FreePeople/69701597_038_a/?$redesign-zoom-5x$",
+        "price": "69.99",
+        "stock_quantity": 13,
+        "category": "women's clothes"
+    },
+    {
+        "name": "Perri Linen Drop-Waist Mini",
+        "description": "Forever romantic and versatile, the Perri Linen Drop-Waist Mini from our free-est collection is a true wear-everywhere staple. This sweet mini dress features a relaxed drop-waist silhouette, cap sleeves that can be worn off the shoulder, ruched detailing at the bust, button-up closures, and a tie detail at the back. Perfect for pairing with western boots for a fun look or with sandals and a swimsuit for a beachy vibe, this dress will be your go-to all season long.",
+        "image_url": "https://images.urbndata.com/is/image/FreePeople/90111659_046_a/?$redesign-zoom-5x$",
+        "price": 56.99,
+        "stock_quantity": 23,
+        "category": "women's clothes"
+    },
+     {
+        "name": "We The Free Opal Swing Denim Jacket",
+        "description": "Elevate your denim jacket collection with the We The Free Opal Swing Denim Jacket. This cool and unique jacket features dropped shoulders for a relaxed fit and defined pleating at the back, adding a special swingy touch. It comes with a button-front closure, double bust patch pockets, and a lower back hemline for a stylish and functional look. Perfect for layering and adding a trendy twist to any outfit.",
+        "image_url": "https://images.urbndata.com/is/image/FreePeople/68349745_436_b/?$redesign-zoom-5x$",
+        "price": 74.99,
+        "stock_quantity": 26,
+        "category": "women's clothes"
+    },
+    {
+        "name": "We The Free Xena Slim Straight Jeans",
+        "description": "So classic from our We The Free collection, the Xena Slim Straight Jeans feature a vintage high-rise fit with slim straight legs and 5-pocket styling. Made from authentic rigid cotton, these jeans offer a timeless look with a zip-fly and button closure, straight-leg style, and belt loops at the waistband. Perfect for any occasion, these jeans are the ideal wear-everywhere wardrobe staple.",
+        "image_url": "https://images.urbndata.com/is/image/FreePeople/90291808_001_a/?$redesign-zoom-5x$",
+        "price": 64.99,
+        "stock_quantity": 15,
+        "category": "women's clothes"
+    },
     {
         "name": "Ring My Bells Bell Bottom Flare Jeans - Light Wash",
         "price": 69.99,
@@ -605,6 +645,22 @@ with app.app_context():
         "stock_quantity": 30,
         "image_url": "https://shopswankaposh.com/cdn/shop/files/20231115-352A6927_2500x.jpg?v=1703022508"
     },
+     {
+        "name": "Denim Pockets Wide Leg Cargo Overalls - Blue",
+        "description": "Stay stylish and practical with our Denim Pockets Wide Leg Cargo Overalls in Blue. These regular silhouette overalls feature a boat neckline and a comfortable wide-leg design. Made from durable cotton fabric, they are both functional and fashionable, with multiple pockets for all your essentials. The sleeveless design and adjustable straps ensure a perfect fit, making these overalls an ideal choice for any casual outing.",
+        "image_url": "https://img.staticdj.com/ff8dfaf54c0d2eca14c423c6db2e530a_750x.jpeg",
+        "price": 64.99,
+        "stock_quantity": 23,
+        "category": "women's clothes"
+    },
+    {
+        "name": "Cargo Pockets Straps Button Denim Romper Playsuit - Blue",
+        "description": "Embrace casual chic with our Cargo Pockets Straps Button Denim Romper Playsuit in Blue. This stylish playsuit features cargo pocket decor, shoulder straps, and a buttoned waist for a flattering fit. Crafted from durable denim fabric, it offers both comfort and a trendy look. Perfect for everyday wear, this romper combines functionality with fashion, making it a versatile addition to your wardrobe.",
+        "image_url": "https://img.staticdj.com/d5924a0bce78be3dc29650b8201f3b56_750x.jpeg",
+        "price": 54.99,
+        "stock_quantity": 29,
+        "category": "women's clothes"
+    },
     {
         "name": "For Your Thoughts High Rise Skinny Jeans - Medium Wash",
         "price": 59.99,
@@ -612,6 +668,14 @@ with app.app_context():
         "category": "women's clothes",
         "stock_quantity": 15,
         "image_url": "https://shopswankaposh.com/cdn/shop/files/20240308-352A3971_2048x.jpg?v=1709915992"
+    },
+    {
+        "name": "Denim Strapless Splash Ink Print Cargo Jumpsuit",
+        "description": "Make a bold statement with our Denim Strapless Splash Ink Print Cargo Jumpsuit. This eye-catching piece features a strapless design and a button-up closure, offering a sleek and modern look. The straight leg cut and multi-pocket details provide both style and functionality. Adorned with a unique splash ink print, this denim jumpsuit is perfect for those who love to stand out. Ideal for casual outings or trendy events, it's a must-have addition to your fashion-forward wardrobe.",
+        "image_url": "https://img.staticdj.com/0036f882f88a142541ee87719d29bc7a_1080x.jpg",
+        "price": "79.99",
+        "stock_quantity": 12,
+        "category": "women's clothes"
     },
     {
         "name": "Juniors' SO® BOHO Cardigan",
