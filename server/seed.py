@@ -485,6 +485,94 @@ with app.app_context():
         "stock_quantity": 30,
         'category': "women’s clothes"
     },
+     {
+        "name": "Plunge Halter Jogger Jumpsuit",
+        "description": "Make a bold fashion statement with this Plunge Halter Jogger Jumpsuit, featuring a plunging neckline and comfortable jogger-style pants. Whether you're dressing up for a night out or seeking a chic yet relaxed look, this jumpsuit combines style and comfort for a versatile and trendy ensemble.",
+        "image_url": "https://cdn-review.cupshe.com/cmc-admin/2024_03_11/10_43_221/04381c98-da8b-4796-baf7-e6c2a8f561d5/CAA13E3F043TT/1.jpg?x-oss-process=image/format,avif/quality,q_100/resize,w_1500",
+        "price": 31.99,
+        "stock_quantity": "19",
+        "category": "women's clothes"
+    },
+      {
+        "name": "Royal Blue One Shoulder Romper",
+        "description": "Make a bold fashion statement with the Royal Blue One Shoulder Romper, a chic and stylish piece that's perfect for a night out on the town or a sunny day by the beach!",
+        "image_url": "https://cdn-review.cupshe.com/cmc-admin/product/20230415/c7d71feb6b9140bbb362ad766dd28237.jpg?x-oss-process=image/format,avif/quality,q_100/resize,w_1500",
+        "price": 29.99,
+        "stock_quantity": 25,
+        "category": "women's clothes"
+    },
+       {
+        "name": "Cutout Textured V-Neck Tee",
+        "description": "Make a statement with our Cutout Textured V-Neck Tee. This trendy tee features eye-catching cutout details and a textured fabric for added dimension, perfect for adding a touch of edge to your casual outfits.",
+        "image_url": "https://cdn-review.cupshe.com/cmc-admin/product/20240614/c6f02bf00fa2f99d71726c11854ab149.jpg?x-oss-process=image/format,avif/quality,q_100/resize,w_1500",
+        "price": 22.99,
+        "stock_quantity": 36,
+        "category": "women's clothes"
+    },
+        {
+        "name": "Sage Eyelet Jersey Tank Top",
+        "description": "The Sage Eyelet Jersey Tank Top keeps you cool and stylish with its breathable jersey fabric and delicate eyelet detailing, making it a perfect summer staple.",
+        "image_url": "https://cdn-review.cupshe.com/cmc-admin/2024_03_06/14_05_203/3f0cca2e-4bdf-4954-bc9b-933da36982fe/CAA04A3M006PP/4.jpg?x-oss-process=image/format,avif/quality,q_100/resize,w_1500",
+        "price": 22.99,
+        "stock_quantity": 21,
+        "category": "women's clothes"
+    },
+         {
+        "name": "Time Out Crossover Distressed Vintage Ankle Jeans - Light Blue Wash",
+        "description": 'Elevate your casual wardrobe with the Time Out Crossover Distressed Vintage Ankle Jeans in Light Blue Wash. These stylish straight leg jeans feature a distressed vintage look, an 11" high rise, and a unique notched fray hem. With low stretch for added comfort and durability, they have a classic 5-pocket design and a 27" inseam. Each pair is uniquely crafted through a specialized distressing and wash process. Made from a blend of 68% cotton, 31% polyester, and 1% spandex. Perfect for adding a touch of vintage flair to any outfit.',
+        "image_url": "https://www.fashionnova.com/cdn/shop/products/TimeCrossoverDistressedVintageAnkleJeans-LightBlueWash_MER.jpg?v=1595298723",
+        "price": 34.99,
+        "stock_quantity": 16,
+        "category": "women's clothes"
+    },
+          {
+        "name": "",
+        "description": 'Discover timeless style with the Time Tells Vintage Ankle Jeans in Light Blue Wash. These straight leg jeans offer a low-stretch fit with a vintage look, featuring a distinctive notched fray hem and classic 5-pocket design. The 10.75" high rise and 27" inseam provide a flattering fit, perfect for any casual occasion. Each pair is uniquely crafted through a specialized wash process, ensuring one-of-a-kind style. Made from a blend of 67% cotton, 29% polyester, 3% rayon, and 1% spandex. Follow care instructions carefully to maintain the garments  aesthetic.',
+        "image_url": "https://www.fashionnova.com/cdn/shop/products/01-10-22Studio4_ME_RL_13-58-44_34_F121870N_LightBlueWash_15692_KL.jpg?v=1641923689",
+        "price": 19.99,
+        "stock_quantity": 23,
+        "category": "women's clothes"
+    },
+           {
+        "name": "Petite Crossover Straight Leg Jeans - Medium Wash",
+        "description": "Introducing the Petite Crossover Straight Leg Jeans in Medium Wash, also available in Light Wash. These jeans feature a unique crossover waistband and a classic 5-pocket design. Designed for all heights, they come in Petite, Regular, and Tall (35 lengths. With an 11.5 inch high rise and crafted from 100% non-stretch cotton, they offer a comfortable, vintage-inspired fit. Each pair is uniquely crafted through a specialized wash process. Perfect for any casual wardrobe.",
+        "image_url": "https://www.fashionnova.com/cdn/shop/products/07-05-22Studio1_CE_MR_10-47-10_13_ZDJ1047P_MediumWash_6338_EH_468x@2x.jpg?v=1657232331",
+        "price": 34.99,
+        "stock_quantity": 23,
+        "category": "women's clothes"
+    },
+    {
+        "name": "Elegance in Motion: Casual Two-Piece Shorts Set",
+        "description": "Elevate your style with the Elegance in Motion Two-Piece Shorts Set. Featuring a surplice neck short sleeve top and skinny lace-up elastic waist shorts, this solid color outfit offers comfort and sophistication. Perfect for casual outings, it provides a flattering silhouette with a chic, versatile look.",
+        "image_url": "https://img.kwcdn.com/product/fancy/604383c3-9778-48c0-9f94-cf316e98915f.jpg?imageView2/2/w/800/q/70/format/webp",
+        "price": 26.99,
+        "stock_quantity": 18,
+        "category": "women's clothes"
+    },
+    {
+        "name": "Seaside Elegance: Chiffon Holiday Dress",
+        "description": "Step into summer with the Seaside Elegance Chiffon Holiday Dress. This fashionable, casual, and elegant dress features a vibrant print, perfect for beach holidays. Designed for comfort and style, it's a must-have for your European and American vacations.",
+        "image_url": "https://img.kwcdn.com/product/fancy/4d7b8aa8-f942-492e-95a1-aa4e11806577.jpg?imageView2/2/w/800/q/70/format/webp",
+        "price": 19.99,
+        "stock_quantity": "14",
+        "category": "women's clothes"
+    },
+    {
+        "name": "Kiana Tropical Maxi Dress - Black/Combo",
+        "description": "Embrace tropical elegance with the Kiana Tropical Maxi Dress in Black/Combo. This sleeveless maxi dress features adjustable spaghetti straps, a flattering V-neck, and a tie-back detail. The elastic waist and faux button front add a touch of sophistication, while the front slit and ruffle trim enhance its feminine charm. Fully lined and made from 100% polyester, this non-stretch dress ensures comfort and style. Dress length is 59 inches. Note: Print placement may vary. Perfect for making a statement at any summer event.",
+        "image_url": "https://www.fashionnova.com/cdn/shop/products/KianaTropicalMaxiDress-Blackcombo_MER_468x@2x.jpg?v=1652833141",
+        "price": 44.99,
+        "stock_quantity": 15,
+        "category": "women's clothes"
+    },
+    {
+        "name": "Sassy Straight Leg Jeans - Light Blue Wash",
+        "description": "'Step out in style with the Sassy Straight Leg Jeans in Light Blue Wash. These jeans feature a classic 5-pocket design, distressed detailing, and a 12' ultra high rise for a flattering fit. With a 33' inseam and crafted from 100% non-stretch cotton, they offer both comfort and durability. Each pair is unique due to the specialized wash and distressing process. Perfect for a chic, casual look.'",
+        "image_url": "https://www.fashionnova.com/cdn/shop/products/02-14-22Studio5_DD_AC_13-47-36_45_A1313_LightBlueWash_43262_KL.jpg?v=1644969899",
+        "price": 39.99,
+        "stock_quantity": 18,
+        "category": "women's clothes"
+    },
     {
         "name": "Graphic Red Lips Graphic Tee",
         "description": "Graphic Red Lips Graphic Tee",
