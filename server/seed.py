@@ -350,6 +350,22 @@ with app.app_context():
         "category": "women's clothes"
     },
      {
+        "name": "Strapless Raw Edge Harem Leg Denim Jumpsuit",
+        "description": "Embrace effortless style with our Strapless Raw Edge Harem Leg Denim Jumpsuit. Featuring a chic strapless design with a boat neckline, this jumpsuit offers a modern and relaxed fit. The pockets and raw edge details add a touch of edgy flair, while the harem leg design ensures comfort and a unique silhouette. Crafted from durable denim fabric, this jumpsuit is perfect for casual outings and stylish gatherings alike.",
+        "image_url": "https://img.staticdj.com/9ac6dc73260c022dbcb097188d8ac631_750x.png",
+        "price": 49.99,
+        "stock_quantity": 6,
+        "category": "women's clothes"
+    },
+    {
+        "name": "Floral Print Colorblock Vacation Shorts Matching Set",
+        "description": "Step into vacation mode with our Floral Print Colorblock Short Sleeve Blouse and Shorts Matching Set. This regular silhouette set features a chic turndown collar and short sleeves, perfect for warm-weather getaways. The vibrant floral print and colorblock design add a stylish touch, while the comfortable polyester fabric ensures a relaxed fit. Ideal for casual outings or beachside strolls, this set is a must-have for your vacation wardrobe.",
+        "image_url": "https://img.staticdj.com/aaa030408dfb522a3d58374a46274eca_750x.png",
+        "price": 35.99,
+        "stock_quantity": 21,
+        "category": "women's clothes"
+    }
+     {
         "name": "Culture Code Full Size Ribbed Zip Up Drawstring Hooded Jacket",
         "description": "This jacket is a trendy and versatile piece that adds a touch of texture to any outfit. With its zip closure and adjustable drawstring hood, it offers both style and functionality.",
         "image_url": "https://e2gworld.com/cdn/shop/files/95b69071-d0da-40a6-a226-8901c2812ed2-Max_934x1400.jpg?v=1718972132",
