@@ -218,7 +218,7 @@ class CustomerById(Resource):
 
 api.add_resource(CustomerById, '/customers/<int:id>')
 
-# Need to finsih code to add admin features
+# Need to finish code to add admin features
 
 # class SetAdmin(Resource):
 #     @admin_required  # Ensure this is a decorator that checks if the user is an admin
