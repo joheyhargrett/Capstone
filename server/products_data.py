@@ -640,6 +640,62 @@ new_products = [
         "category": "teen's clothes"
     },
     {
+        "name": "Cherries High-Neck Cropped Waffle Tank",
+        "description": "Meet your new favorite top, the Cherries High-Neck Cropped Waffle Tank. This comfy tank features a high neck and a slim fit, made from a stretch waffle-knit fabric that offers both style and comfort. Adorned with a sweet cherries graphic, it's the perfect blend of playful and chic. The cropped cut, approximately 19.75\" in length for size M, makes it ideal for pairing with high-waisted jeans or skirts. Crafted from a blend of 62% polyester, 33% rayon, and 5% spandex, it's easy to care for with machine wash and dry. Style number 1102. Imported.",
+        "image_url": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw6daaf0e4/80111102_007_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",
+        "price": 12.99,
+        "stock_quantity": 17,
+        "category": "teen's clothes"
+},
+    {
+        "name": "Washed High-Neck Cropped Waffle Tank",
+        "description": "Ultra comfy in stretchy, textured waffle fabric, this cute tank is an everyday go-to. The Cherries High-Neck Cropped Waffle Tank features a high neck and slim fit, made from a stretch waffle-knit fabric with a stylish burnout wash. The cropped cut, approximately 19.75 \" in length for size M, makes it perfect for pairing with high-waisted jeans or skirts.",
+        "image_url": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwce3ff5ae/80111103_449_alt1.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",
+        "price": "9.99",
+        "stock_quantity": 12,
+        "category": "teen's clothes"
+    },
+    {
+        "name": "Essential Casual Crew Neck Tee",
+        "description": "Casual style's calling. Answer in this goes-with-anything tee. The Essential Casual Crew Neck Tee features a loose fit and a classic crew neck, made from soft jersey knit fabric for ultimate comfort. With an approximate length of 27.5\" for size M, this versatile tee is perfect for any casual outing. Style number 4206.",
+        "image_url": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw644c083e/80644206_007_main.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",
+        "price": "11.99",
+        "stock_quantity": 22,
+        "category": "teen's clothes"
+    },
+    {
+        "name": "Boys Graphic T-Shirt & Denim Jogger Pants",
+        "description": "Give him a cool casual outfit for his everyday looks: Epic Threads' graphic-print T-shirt pairs perfectly with pull-on denim joggers.",
+        "image_url": "https://slimages.macysassets.com/is/image/MCY/products/9/optimized/24210049_fpx.tif?op_sharpen=1&wid=1200&fit=fit,1&$filtersm$&fmt=webp",
+        "price": 15.99,
+        "stock_quantity": 14,
+        "category": "teen's clothes"
+    },
+    {
+        "name": "Mini Double Zipper Nylon Pant - Orange",
+        "description": "Step up your style game with the Mini Double Zipper Nylon Pants in vibrant Orange. These trendy pants feature a faux drawstring and exposed zippers, adding a touch of edge to your look. The elastic waist and drawstring ankles ensure a comfortable and adjustable fit. Made from a blend of 88% nylon and 12% spandex, these pants offer a perfect combination of durability and stretch. Ideal for making a bold fashion statement.",
+        "image_url": "https://www.fashionnova.com/cdn/shop/files/03-08-24_S6_37_SS24B1404_Orange_RA_AA_12-55-01_43443_PXF_468x@2x.jpg?v=1710363958",
+        "price": 19.99,
+        "stock_quantity": 8,
+        "category": "teen's clothes"
+    },
+    {
+        "name": "classic chinos",
+        "description": "Comfortable chino pants in a stretchy twill fabric with pockets and belt loops. Sizes 5/6 through 7/8 feature adjustable waistbands and hook and slide closures. Sizes 9/10 through 15/16 feature a standard zipper and button fly.",
+        "image_url": "https://img.abercrombie.com/is/image/anf/KIC_230-3306-0352-040_model2.jpg?policy=product-extra-large",
+        "price": "24.99",
+        "stock_quantity": 18,
+        "category": "teen's clothes"
+    },
+    {
+        "name": "ypb neoknit active logo full-zip hoodie",
+        "description": "Comfy full-zip hoodie in our new neoknit active fabric, with 4-way stretch and sweat-wicking properties. Features print graphic logo details at left chest and sleeve, on-trend seaming details, zip pocket at sleeve, side pockets, banded hem and thumbholes at cuffs.",
+        "image_url": "https://img.abercrombie.com/is/image/anf/KIC_222-4050-0007-012_model2.jpg?policy=product-large",
+        "price": 34.99,
+        "stock_quantity": 15,
+        "category": "teen's clothes"
+    },
+    {
         "name": "Boys 8-20 Sonoma Goods For Life® Everyday Raglan Tee in Regular & Husky",
         "description": "Casual comfort and style are effortless with this kids' everyday raglan tee from Sonoma Goods For Life.",
         "image_url": "https://media.kohlsimg.com/is/image/kohls/5593806_ALT4?wid=1500&hei=1500&op_sharpen=1&qlt=60",
@@ -717,6 +773,14 @@ new_products = [
         "image_url": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwc057d727/81063331_268_alt1.jpg?sw=2000&sh=2000&sm=fit&sfrm=jpg",
         "price": 14.99,
         "stock_quantity": 50,
+        "category": "teen's clothes"
+    },
+    {
+        "name": "Mid-Rise Cargo Wide Leg Jeans - Blue Wash",
+        "description": "Upgrade your denim collection with our Mid-Rise Cargo Wide Leg Jeans in Blue Wash. These stylish cargo jeans feature a mid-rise fit and a solid, wide-leg design, perfect for a modern, relaxed look. Crafted with a button closure for a secure fit, these jeans are made from a durable blend of 75% cotton, 15% viscose, and 10% polyester. Each pair is unique due to the specialized wash process, adding a distinctive touch to your wardrobe. Ideal for casual wear and versatile styling.",
+        "image_url": "https://www.fashionnova.com/cdn/shop/files/MiniWideLegCargoJeans-BlueWash_MER_3_468x@2x.jpg?v=1697140526",
+        "price": 29.99,
+        "stock_quantity": 17,
         "category": "teen's clothes"
     },
     {
