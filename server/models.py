@@ -4,6 +4,7 @@ from sqlalchemy import MetaData
 from sqlalchemy.orm import validates
 from datetime import datetime
 from sqlalchemy.ext.hybrid import hybrid_property
+import re
 
 
 from config import db, bcrypt
@@ -45,12 +46,25 @@ class Customer(db.Model, SerializerMixin):
             raise ValueError('Invalid email')
         return email
     
-    # @validates('phone_number')
-    # def validate_phone_number(self, key, phone_number):
-    #     if not (len(phone_number) == 10 and phone_number.isdigit()):
-    #         raise ValueError('Invalid phone number')
-    #     return phone_number
-        
+    @validates('phone_number')
+    def validate_phone_number(self, key, phone_number):
+        #Phone number validation: allowing digits, spaces, hyphens, and parentheses
+        if not re.match(r'^\+?1?\d{9,15}$', phone_number):
+            raise ValueError('Invalid phone number')
+        return phone_number
+    
+    @validates('first_name', 'last_name')
+    def validate_name(self, key, name):
+        if not name.isalpha() or len(name) < 1 or len(name) > 100:
+            raise ValueError(f'Invalid {key}')
+        return name
+
+    @validates('address')
+    def validate_address(self, key, address):
+        if len(address) < 1 or len(address) > 255:
+            raise ValueError('Invalid address')
+        return address
+    
 
     def __repr__(self):
         return f"<Customer {self.id} {self.first_name} {self.last_name} {self.email}  {self.address} {self.phone_number} >"
