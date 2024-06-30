@@ -1,14 +1,18 @@
 # Standard library imports
 from random import randint, choice
 from datetime import datetime
+import os
+
+
 
 # Remote library imports
 from faker import Faker
+from dotenv import load_dotenv
 
 # Local imports
 from app import app
-from config import bcrypt
-from models import Customer, Review, Product, OrderedItem, db
+from config import db
+from models import Customer, Review, Product, OrderedItem, Admin
 from products_data import new_products
 
 
@@ -21,9 +25,11 @@ with app.app_context():
     Product.query.delete()
     Review.query.delete()
     OrderedItem.query.delete()
+    Admin.query.delete()
+    
 
     def format_phone_number(raw_phone):
-        return f"({raw_phone[0:3]}) {raw_phone[3:6]}-{raw_phone[6:]}"
+        return f"+1{raw_phone}" 
 
     ratings_and_comments = [
     (5, "Excellent product, exceeded my expectations!"),
@@ -76,8 +82,21 @@ with app.app_context():
     (5, "Thrilled with my purchase!"),
     ]
     
-    
+    load_dotenv()
+    admin_username = os.getenv('ADMIN_USERNAME')
+    admin_password = os.getenv('ADMIN_PASSWORD')
 
+    if not admin_username or not admin_password:
+        raise ValueError("Admin username or password environment variables not set")
+
+    print("Seeding admin...")
+    
+    admin = Admin(
+        name="Johey Hargrett",
+        username=admin_username
+    )
+    admin.password_hash = admin_password
+    db.session.add(admin)
     
     
     print("Seeding customers...")
